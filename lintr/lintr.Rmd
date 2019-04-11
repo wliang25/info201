@@ -39,7 +39,7 @@ Once the lintr package successfully downloads, at the top of your `assignment.R`
 ## Set your working directory
 Often times you'll find yourself using file paths to load an image (think back to a1-news) or a dataset from a csv file. In these instances, you want to use a _relative path_ so other users can run your script (assuming they have access to your whole repo) and load the same images and datasets as you. 
 
-To tackle the above problem, you want to **set your R session to your current working directory** (aka you want to set up your current R session so it starts reading file paths relative to the current folder/repository that you'll be working with - our a2 homework folder in this case). There are multiple ways to accomplish this, but one of the easiest ways by going to `Session` > `Set Working Directory` > `To Source File Location`:
+To tackle the above problem, you want to **set your R session to your current working directory** (aka you want to set up your current R session so it starts reading file paths relative to the current folder/repository that you'll be working with - our a2 homework folder in this case). There are multiple ways to accomplish this, but one of the easiest ways is by going to `Session` > `Set Working Directory` > `To Source File Location`:
 
 ![](./imgs/session_source_file_location.PNG)
 
@@ -65,3 +65,19 @@ Now you might have noticed, RStudio opened up the `Markers` tab for you. In this
 Once we fix these style errors, resave the file, and run the `lint()` function again. All the fixed lint errors will disappear!
 
 **That's it! You should all now know how to run the lintr library to check the style of your code.**
+
+## Common LintR Issues {.tabset .tabset-fade}
+
+### Toggle 80 Character Line
+One common tidyverse style restriction is to keep **lines of code under 80 characters long**. A easy way to identify lines of code that exceed 80 characters long is to toggle a margin line in RStudio. This can be set up by going to `Tools` > `Global Options...`:
+
+![](./imgs/tools.PNG)
+
+From there the `Options` window will open up. Navigate to `Code` > `Display`:
+
+![](./imgs/column_margin.PNG)
+
+You'll see an option to `Show margin`, where you can also indicate the character value (80 in our case) in the `Margin column` textbox. After you've chose the appropriate settings, go ahead and click `OK` - and you're done!
+
+### Whitespaces
+In your a2 you'll notice that often times the lines of code you're writing will surpass the 80 characters margin. To fix this, you would most likely be breaking up the lines of code onto a new line. When doing such, make sure not to include extra regular spaces. Make sure you break the lines exactly before the code using only one `return` or `enter` without extra spaces. If you accidentally add an extra space somewhere in the process you will get the lintr error: `Trailing whitespace is superfluous.` Redo the process of breaking up the lines if you run into this problem.
