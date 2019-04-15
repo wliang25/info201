@@ -3,7 +3,9 @@ title: "How to use lintr"
 author: "Wendy Liang"
 date: "4/9/2019"
 output:
-  html_document: default
+  html_document: 
+      includes:
+       in_header: ../ga_script.html
 ---
 
 ```{r, warning=FALSE, message=FALSE, echo=FALSE}
